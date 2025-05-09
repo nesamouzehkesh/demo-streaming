@@ -1,7 +1,95 @@
-.footer {
-    background-color: #222;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-  }
-  
+.site-footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 2rem 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-nav .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.footer-nav a {
+  color: #bdbdbd;
+  text-decoration: none;
+}
+
+.footer-legal {
+  color: #999;
+  font-size: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-extras ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.social-icon,
+.store-badge {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.store-badge {
+  width: 120px;
+  height: 35px;
+}
+
+.social-icon.facebook {
+  background-image: url('../assets/facebook.svg');
+}
+
+.social-icon.facebook:hover {
+  background-image: url('../assets/facebook-hover.svg');
+}
+
+.social-icon.twitter {
+  background-image: url('../assets/twitter.svg');
+}
+
+.social-icon.twitter:hover {
+  background-image: url('../assets/twitter-hover.svg');
+}
+
+.social-icon.instagram {
+  background-image: url('../assets/instagram.svg');
+}
+
+.social-icon.instagram:hover {
+  background-image: url('../assets/instagram-hover.svg');
+}
+
+.store-badge.ios {
+  background-image: url('../assets/app-store.svg');
+}
+
+.store-badge.android {
+  background-image: url('../assets/play-store.svg');
+}
+
+.store-badge.windows {
+  background-image: url('../assets/windows.svg');
+}
