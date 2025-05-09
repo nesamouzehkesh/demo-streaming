@@ -1,5 +1,6 @@
 import { useFilteredPrograms } from '../hooks/use-filtered-programs';
 import SectionHeading from '../components/SectionHeading';
+import ProgramTile from '../components/ProgramTile';
 import './Series.css';
 
 export default function Series() {
@@ -12,11 +13,8 @@ export default function Series() {
     <>
     <SectionHeading title="Popular Series" />
     <div className="program-grid">
-      {series.map((item) => (
-        <div className="program-card" key={item.title}>
-          <img src={item.images['Poster Art'].url} alt={item.title} />
-          <p>{item.title}</p>
-        </div>
+      {series.map(program => (
+        <ProgramTile key={program.title} program={program} />
       ))}
     </div>
     </>

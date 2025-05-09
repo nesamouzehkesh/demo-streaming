@@ -1,6 +1,7 @@
 import { useFilteredPrograms } from '../hooks/use-filtered-programs';
 import './Movies.css';
 import SectionHeading from '../components/SectionHeading';
+import ProgramTile from '../components/ProgramTile';
 
 export default function Movies() {
   const { data: movies, loading, error } = useFilteredPrograms('movie');
@@ -12,14 +13,10 @@ export default function Movies() {
     <>
     <SectionHeading title="Popular Movies" />
     <div className="program-grid">
-      {movies.map((item) => (
-        <div className="program-card" key={item.title}>
-          <img src={item.images['Poster Art'].url} alt={item.title} />
-          <p>{item.title}</p>
-        </div>
+      {movies.map(program => (
+        <ProgramTile key={program.title} program={program} />
       ))}
     </div>
     </>
-    
   );
 }
