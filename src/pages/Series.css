@@ -1,0 +1,26 @@
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .program-card {
+    text-align: center;
+  }
+  
+  .program-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .state {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .state.error {
+    color: red;
+  }
+  
