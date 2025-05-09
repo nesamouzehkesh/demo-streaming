@@ -3,7 +3,7 @@ import SectionHeading from '../components/SectionHeading';
 import ProgramTile from '../components/ProgramTile';
 import './Series.css';
 
-export default function Series() {
+export default function Series(): React.ReactElement {
   const { data: series, loading, error } = useFilteredPrograms('series');
 
   if (loading) return <p className="state">Loading...</p>;

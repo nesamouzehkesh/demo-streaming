@@ -13,7 +13,7 @@ type ProgramTileProps = {
   };
 };
 
-export default function ProgramTile({ program }: ProgramTileProps) {
+export default function ProgramTile({ program }: ProgramTileProps): React.ReactElement {
   return (
     <Link to={`/${program.programType}s`} className="program-tile">
       <div className="program-image">

@@ -9,10 +9,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem 1rem;
+    margin-right: 1rem;
+  }
 }
 
 .header-content h1{
   font-size: 1.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding-left: 0;
+  }
 }
 
 .header-actions a {
@@ -20,6 +31,15 @@
   color: white;
   text-decoration: none;
   font-weight: 500;
+  }
+
+.header-actions {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 .trial-button {

@@ -1,8 +1,11 @@
 import type { Program } from '../types/Program';
+import sampleData from '../data/sample.json';
 
 export async function fetchPrograms(): Promise<Program[]> {
-  const response = await fetch('../../public/sample.json');
-  if (!response.ok) throw new Error('Failed to load');
-  const data = await response.json();
-  return data.entries;
+  // simulating API call with some delay
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(sampleData.entries as Program[]);
+    }, 500);
+  });
 }

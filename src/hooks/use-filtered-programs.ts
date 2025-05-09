@@ -1,31 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Program } from '../types/Program';
 import { fetchPrograms } from '../utils/fetch-data';
-import { filterAndSortPrograms } from '../utils/filter-and-sort';
 
-type UseFilteredProgramsResult = {
-  data: Program[];
-  loading: boolean;
-  error: boolean;
-};
-
-export function useFilteredPrograms(type: 'movie' | 'series'): UseFilteredProgramsResult {
+export function useFilteredPrograms(programType: 'movie' | 'series') {
   const [data, setData] = useState<Program[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetchPrograms()
-      .then((entries: Program[]) => {
-        const filtered = filterAndSortPrograms(entries, type);
+    const loadData = async () => {
+      try {
+        const programs = await fetchPrograms();
+        const filtered = programs
+          .filter(program => program.programType === programType)
+          .sort((a, b) => a.title.localeCompare(b.title))
+          .slice(0, 21);
         setData(filtered);
+      } catch (err) {
+        setError(err instanceof Error ? err : new Error('Failed to load data'));
+      } finally {
         setLoading(false);
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-      });
-  }, [type]);
+      }
+    };
+
+    loadData();
+  }, [programType]);
 
   return { data, loading, error };
 }

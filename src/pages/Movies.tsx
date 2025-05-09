@@ -3,7 +3,7 @@ import './Movies.css';
 import SectionHeading from '../components/SectionHeading';
 import ProgramTile from '../components/ProgramTile';
 
-export default function Movies() {
+export default function Movies(): React.ReactElement {
   const { data: movies, loading, error } = useFilteredPrograms('movie');
 
   if (loading) return <p className="state">Loading...</p>;

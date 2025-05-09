@@ -2,7 +2,7 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   return (
     <div className="home">
       <SectionHeading title="Popular Titles" />
