@@ -1,28 +1,8 @@
-import { useEffect, useState } from 'react';
-import type { Program } from '../types/Program';
-import { fetchPrograms } from '../utils/fetch-data';
+import { useFilteredPrograms } from '../hooks/use-filtered-programs';
 import './Series.css';
 
 export default function Series() {
-  const [series, setSeries] = useState<Program[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    fetchPrograms()
-      .then((entries) => {
-        const filtered = entries
-          .filter((item) => item.programType === 'series' && item.releaseYear >= 2010)
-          .sort((a, b) => a.title.localeCompare(b.title))
-          .slice(0, 21);
-        setSeries(filtered);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-      });
-  }, []);
+  const { data: series, loading, error } = useFilteredPrograms('series');
 
   if (loading) return <p className="state">Loading...</p>;
   if (error) return <p className="state error">Oops! Something went wrong.</p>;
