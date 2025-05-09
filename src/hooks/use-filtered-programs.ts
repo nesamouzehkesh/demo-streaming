@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Program } from '../types/Program';
 import { fetchPrograms } from '../utils/fetch-data';
+import { filterAndSortPrograms } from '../utils/filter-and-sort';
 
 export function useFilteredPrograms(type: 'movie' | 'series') {
   const [data, setData] = useState<Program[]>([]);
@@ -10,10 +11,7 @@ export function useFilteredPrograms(type: 'movie' | 'series') {
   useEffect(() => {
     fetchPrograms()
       .then((entries: Program[]) => {
-        const filtered = entries
-          .filter((item: Program) => item.programType === type && item.releaseYear >= 2010)
-          .sort((a: Program, b: Program) => a.title.localeCompare(b.title))
-          .slice(0, 21);
+        const filtered = filterAndSortPrograms(entries, type);
         setData(filtered);
         setLoading(false);
       })
