@@ -1,10 +1,11 @@
 import './Home.css';
 import { Link } from 'react-router-dom';
+import SectionHeading from '../components/SectionHeading';
 
 export default function Home() {
   return (
     <div className="home">
-      <h2 className="home-title">Popular Titles</h2>
+      <SectionHeading title="Popular Titles" />
       <div className="tiles">
         <Link to="/series" className="tile">
           <div className="tile-image series" />
