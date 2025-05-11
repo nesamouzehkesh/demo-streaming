@@ -1,19 +1,19 @@
 .site-header {
-  background: linear-gradient(to right, #1E90FF, #007BFF);
-  padding-left: 1rem;
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-logo {
+  color: inherit;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0.5rem 8rem;
 
   @media (max-width: 768px) {
-    padding: 1rem 1rem;
-    margin-right: 1rem;
+    padding: 1rem 2rem;
   }
 }
 
@@ -26,21 +26,21 @@
   }
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* I dont have mobile designs, this is just a sample idea */
+  }
+}
+
 .header-actions a {
   margin-left: 1rem;
   color: white;
-  text-decoration: none;
   font-weight: 500;
   }
-
-.header-actions {
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-}
 
 .trial-button {
   background-color: #333;

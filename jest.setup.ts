@@ -1,3 +1,3 @@
-import '@testing-library/jest-dom';
+import { TextEncoder } from 'util';
 
-global.TextEncoder = require('util').TextEncoder;
+global.TextEncoder = TextEncoder;

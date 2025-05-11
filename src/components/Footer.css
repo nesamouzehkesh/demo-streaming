@@ -1,8 +1,12 @@
 .site-footer {
   background-color: #1e1e1e;
   color: #fff;
-  padding: 2rem 2rem;
+  padding: 2rem 8rem;
   font-size: 0.9rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 }
 
 .footer-nav .nav-links {
@@ -11,12 +15,21 @@
   list-style: none;
   padding: 0;
   margin-bottom: 1rem;
-  gap: 1rem;
+}
+
+.footer-nav .nav-links a {
+  color: #bdbdbd;
+  font-size: 0.875rem;
+}
+
+.footer-nav .nav-links li:not(:last-child) a::after {
+  content: '|';
+  margin: 0 0.625rem;
+  color: #666;
 }
 
 .footer-nav a {
   color: #bdbdbd;
-  text-decoration: none;
 }
 
 .footer-legal {
@@ -59,37 +72,37 @@
 }
 
 .social-icon.facebook {
-  background-image: url('../assets/facebook.svg');
+  background-image: url('../assets/social/facebook.svg');
 }
 
 .social-icon.facebook:hover {
-  background-image: url('../assets/facebook-hover.svg');
+  background-image: url('../assets/social/facebook-hover.svg');
 }
 
 .social-icon.twitter {
-  background-image: url('../assets/twitter.svg');
+  background-image: url('../assets/social/twitter.svg');
 }
 
 .social-icon.twitter:hover {
-  background-image: url('../assets/twitter-hover.svg');
+  background-image: url('../assets/social/twitter-hover.svg');
 }
 
 .social-icon.instagram {
-  background-image: url('../assets/instagram.svg');
+  background-image: url('../assets/social/instagram.svg');
 }
 
 .social-icon.instagram:hover {
-  background-image: url('../assets/instagram-hover.svg');
+  background-image: url('../assets/social/instagram-hover.svg');
 }
 
 .store-badge.ios {
-  background-image: url('../assets/app-store.svg');
+  background-image: url('../assets/store/app-store.svg');
 }
 
 .store-badge.android {
-  background-image: url('../assets/play-store.svg');
+  background-image: url('../assets/store/play-store.svg');
 }
 
 .store-badge.windows {
-  background-image: url('../assets/windows.svg');
+  background-image: url('../assets/store/windows.svg');
 }

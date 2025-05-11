@@ -1,5 +1,5 @@
 import { useFilteredPrograms } from '../hooks/use-filtered-programs';
-import './Movies.css';
+import './ProgramGrid.css';
 import SectionHeading from '../components/SectionHeading';
 import ProgramTile from '../components/ProgramTile';
 
@@ -12,7 +12,7 @@ export default function Movies(): React.ReactElement {
   return (
     <>
     <SectionHeading title="Popular Movies" />
-    <div className="program-grid">
+    <div className="program-grid wrapper">
       {movies.map(program => (
         <ProgramTile key={program.title} program={program} />
       ))}

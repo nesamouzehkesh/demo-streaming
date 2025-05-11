@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Program } from '../types/Program';
 import { fetchPrograms } from '../utils/fetch-data';
+import { filterAndSortPrograms } from '../utils/filter-and-sort';
 
 export function useFilteredPrograms(programType: 'movie' | 'series') {
   const [data, setData] = useState<Program[]>([]);
@@ -11,10 +12,7 @@ export function useFilteredPrograms(programType: 'movie' | 'series') {
     const loadData = async () => {
       try {
         const programs = await fetchPrograms();
-        const filtered = programs
-          .filter(program => program.programType === programType)
-          .sort((a, b) => a.title.localeCompare(b.title))
-          .slice(0, 21);
+        const filtered = filterAndSortPrograms(programs, programType);
         setData(filtered);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Failed to load data'));

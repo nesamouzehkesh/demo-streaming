@@ -48,7 +48,7 @@ npm install
 npm run dev
 ```
 
-Then open [http://localhost:5173](http://localhost:5173)
+Then open [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -96,7 +96,7 @@ These changes improve usability on tablets and mobile devices.
 
 - Extracted layout wrappers (e.g. `PageContainer`)
 - Added accessibility improvements (ARIA labels, alt fallbacks)
-- Applied stricter layout refinements and breakpoints and worked on styling more!
+- Applied stricter layout refinements and breakpoints and worked on styling more, I love styled componennts!
 - Used a typed API response handler instead of `.json()` inline
 - Refactored minor logic duplication across Home, Movies, and Series
 

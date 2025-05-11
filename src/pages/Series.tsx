@@ -1,7 +1,7 @@
 import { useFilteredPrograms } from '../hooks/use-filtered-programs';
 import SectionHeading from '../components/SectionHeading';
 import ProgramTile from '../components/ProgramTile';
-import './Series.css';
+import './ProgramGrid.css';
 
 export default function Series(): React.ReactElement {
   const { data: series, loading, error } = useFilteredPrograms('series');
@@ -12,7 +12,7 @@ export default function Series(): React.ReactElement {
   return (
     <>
     <SectionHeading title="Popular Series" />
-    <div className="program-grid">
+    <div className="program-grid wrapper">
       {series.map(program => (
         <ProgramTile key={program.title} program={program} />
       ))}
